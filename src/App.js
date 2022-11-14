@@ -15,7 +15,6 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
   const [posts, setPosts] = useState(dummyData);
-  const [searchTerm, setSearchTerm] = useState('');
 
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   // This state is the source of truth for the data inside the app. You won't be needing dummyData anymore.
