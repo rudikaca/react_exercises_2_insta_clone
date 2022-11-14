@@ -15,6 +15,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 
 const App = () => {
   const [posts, setPosts] = useState(dummyData);
+  const [searchResult, setSearchResult] = useState([]);
 
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
   // This state is the source of truth for the data inside the app. You won't be needing dummyData anymore.
@@ -40,8 +41,8 @@ const App = () => {
   return (
     <div className='App'>
       {/* Add SearchBar and Posts here to render them */}
-      <SearchBar />
-      <Posts likePost={likePost} posts={posts} />
+      <SearchBar posts={posts} setSearchResult={setSearchResult} />
+      <Posts searchResult={searchResult} likePost={likePost} posts={posts} />
       {/* Check the implementation of each component, to see what props they require, if any! */}
     </div>
   );

@@ -5,16 +5,33 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faHeart, faCircle, faCompass } from '@fortawesome/free-regular-svg-icons';
 import "./SearchBar.css";
 
-const SearchBar = (props) => {
+const SearchBar = ({posts, setSearchResult}) => {
+
+    const searchPost = (e) => {
+        const results = posts.filter(post => {
+            if (!e.target.value) return setSearchResult(posts);
+            return post.username.toLowerCase().includes(e.target.value.toLowerCase());
+        })
+        setSearchResult(results);
+    }
+
+    const handleKeyPress = (e) => {
+        e.preventDefault();
+        if (e.key === 'Enter') {
+            searchPost();
+        }
+    }
+
   return (
     <div className="search-bar-wrapper">
       <div className="social">
         <FontAwesomeIcon icon={faInstagram} />
       </div>
-      <form className="search-form">
+      <form className="search-form" onSubmit={handleKeyPress}>
         <input
           type="text"
           placeholder="Search"
+          onChange={searchPost}
         />
       </form>
       <div className="social-wrapper">

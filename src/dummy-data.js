@@ -54,6 +54,36 @@ const dummyData = [
             },
         ],
     },
+    {
+        id: 3,
+        username: "twitch_2",
+        thumbnailUrl: 'https://icon2.cleanpng.com/20180320/sqe/kisspng-twitch-computer-icons-streaming-media-youtube-live-tv-twitch-icon-5ab19172461392.001176751521586546287.jpg',
+        imageUrl: 'https://images.unsplash.com/photo-1566577134770-3d85bb3a9cc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3750&q=80',
+        likes: 388,
+        timestamp: "July 15th 2022, 03:12:09 pm",
+        comments: [
+            {
+                id: 16,
+                username: "twitch",
+                text: "Epic Street Fighter action here in Vegas!",
+            },
+            {
+                id: 17,
+                username: "michael",
+                text: "Omg that match was crazy",
+            },
+            {
+                id: 18,
+                username: "redi",
+                text: "What a setup",
+            },
+            {
+                id: 19,
+                username: "toni",
+                text: "It that injustice",
+            },
+        ],
+    },
 ];
 
 export default dummyData;
