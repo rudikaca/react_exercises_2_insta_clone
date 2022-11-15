@@ -9,7 +9,7 @@ const SearchBar = ({posts, setSearchResult}) => {
 
     const searchPost = (e) => {
         const results = posts.filter(post => {
-            if (!e.target.value) return setSearchResult(posts);
+            if (!e.target.value) return posts;
             return post.username.toLowerCase().includes(e.target.value.toLowerCase());
         })
         setSearchResult(results);
