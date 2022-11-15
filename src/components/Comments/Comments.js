@@ -3,7 +3,6 @@ import Comment from './Comment';
 import './Comments.css';
 
 const Comments = ({ post, posts, setPosts }) => {
-  // 🔥 Make sure the parent of Comments is passing the right props!
   const [comment, setComment] = useState('');
 
   const handleClick = () => {
@@ -34,7 +33,6 @@ const Comments = ({ post, posts, setPosts }) => {
 
   return (
     <div>
-      {/* map through the comments prop and render a Comment for every piece of data */}
       {post.comments.map((comment) => <Comment key={comment.id}  comment={comment} handleDelete={handleDelete} />)}
         <div className="comment-input">
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />

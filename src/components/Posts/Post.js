@@ -3,9 +3,7 @@ import Comments from '../Comments/Comments';
 import LikeSection from './LikeSection';
 import PostHeader from './PostHeader';
 
-const Post = props => {
-  // 🔥 Make sure the parent of Post is passing the right props!
-  const { post, likePost, posts, setPosts } = props;
+const Post = ({ post, likePost, posts, setPosts }) => {
 
   return (
     <div className='post-border'>
@@ -20,9 +18,7 @@ const Post = props => {
           src={post.imageUrl}
         />
       </div>
-      {/* Is LikeSection getting all the props it needs to work correctly? */}
       <LikeSection numberOfLikes={post.likes} likePost={() => likePost(post.id)} />
-      {/* Comments also wants its props! */}
       <Comments posts={posts} setPosts={setPosts} post={post} />
     </div>
   );
