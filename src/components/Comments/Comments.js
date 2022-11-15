@@ -21,13 +21,24 @@ const Comments = ({ post, posts, setPosts }) => {
       setComment('');
   }
 
+  const handleDelete = (commentId) => {
+      const updatedPost = posts.map((item) => {
+          if (item.id === post.id) {
+              post.comments = post.comments.filter((comm) => comm.id !== commentId);
+          }
+          return item;
+      });
+
+      setPosts(updatedPost);
+  }
+
   return (
     <div>
       {/* map through the comments prop and render a Comment for every piece of data */}
-      {post.comments.map((comment) => <Comment key={comment.id}  comment={comment} />)}
-        <div className="comment">
+      {post.comments.map((comment) => <Comment key={comment.id}  comment={comment} handleDelete={handleDelete} />)}
+        <div className="comment-input">
             <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
-            <button onClick={handleClick}>send</button>
+            <button disabled={!comment} onClick={handleClick}>send</button>
         </div>
     </div>
   );
