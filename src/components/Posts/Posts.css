@@ -45,6 +45,12 @@
   width: 10px;
   margin: 10px;
 }
+.like-section-wrapper-on {
+  height: 10px;
+  width: 10px;
+  margin: 10px;
+  color: red;
+}
 .like-number {
   width: 100px;
   margin: 15px 0px;

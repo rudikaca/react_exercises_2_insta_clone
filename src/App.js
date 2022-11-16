@@ -9,9 +9,15 @@ const App = () => {
   const [searchResult, setSearchResult] = useState([]);
 
   const likePost = postId => {
-    setPosts(posts?.map((post) => (
-        postId === post.id ? {...post, likes: post.likes + 1} : {...post}
-    )));
+    setPosts(posts?.map((post) => {
+        if (!post.like && postId === post.id) {
+           return {...post, likes: post.likes + 1, like : true}
+
+        } else if (post.like && postId === post.id) {
+            return {...post, likes: post.likes - 1, like : false};
+        }
+        return {...post};
+    }));
   };
 
   return (

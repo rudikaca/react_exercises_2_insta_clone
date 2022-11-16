@@ -18,7 +18,7 @@ const Post = ({ post, likePost, posts, setPosts }) => {
           src={post.imageUrl}
         />
       </div>
-      <LikeSection numberOfLikes={post.likes} likePost={() => likePost(post.id)} />
+      <LikeSection post={post} likePost={() => likePost(post.id)} />
       <Comments posts={posts} setPosts={setPosts} post={post} />
     </div>
   );
